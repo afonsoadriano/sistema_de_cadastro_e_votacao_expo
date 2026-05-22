@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* ===============================
+   PÁGINA
+================================ */
+.auth-page {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+
+  background-image: url('../assets/imagens/Gemini_Generated_Image_lqdb54lqdb54lqdb.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.auth-page * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   CARD — Glassmorphism
+================================ */
+.auth-card {
+  position: relative;
+  z-index: 2;
+  width: 400px;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 13px;
+  overflow: hidden;
+  animation: show 0.6s ease;
+}
+
+@keyframes show {
+  0%, 50%      { opacity: 0; }
+  50.1%, 100%  { opacity: 1; }
+}
+
+/* ===============================
+   HEADER DO CARD
+================================ */
+.auth-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.auth-icon img {
+  height: 180px;
+  margin-top: -60px;
+  margin-bottom: -60px;
+  object-fit: contain;
+}
+
+.auth-header h1 {
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.auth-header p {
+  color: rgba(255, 255, 255, 0.70);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* ===============================
+   CAMPOS
+================================ */
+.field {
+  margin: 10px 0;
+  width: 100%;
+}
+
+.field label {
+  display: block;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+/* ===============================
+   INPUT WRAP
+================================ */
+.input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-wrap input {
+  width: 100%;
+  padding: 12px 15px 12px 38px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  outline: none;
+  color: #fff;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+
+.input-wrap input::placeholder {
+  color: rgba(255, 255, 255, 0.50);
+}
+
+/* Linha animada no foco */
+.input-wrap::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background: #0f0188;
+  transition: 0.3s;
+}
+
+.input-wrap:focus-within::after {
+  width: 100%;
+}
+
+/* ===============================
+   ÍCONE DO INPUT
+================================ */
+.input-icon {
+  position: absolute;
+  left: 10px;
+  font-size: 14px;
+  z-index: 1;
+  pointer-events: none;
+  line-height: 1;
+}
+
+/* ===============================
+   TOGGLE PASSWORD
+================================ */
+.toggle-pass {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.70);
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.toggle-pass:hover {
+  color: #fff;
+}
+
+/* ===============================
+   ERRO DE VALIDAÇÃO
+================================ */
+.field.has-error .input-wrap input {
+  border-bottom: 1px solid #f87171;
+  background-color: rgba(248, 113, 113, 0.10);
+}
+
+.error-msg {
+  color: #fca5a5;
+  font-size: 11px;
+  margin-top: 4px;
+  display: block;
+}
+
+/* ===============================
+   BOTÃO SUBMIT
+================================ */
+.btn-auth {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.50);
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  transition: background 80ms ease-in;
+}
+
+.btn-auth:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.btn-auth:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===============================
+   SPINNER
+================================ */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===============================
+   LINK INFERIOR
+================================ */
+.auth-link {
+  text-align: center;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.70);
+  font-size: 13px;
+}
+
+.auth-link a {
+  color: #1801e794;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(62, 4, 170, 0.35);
+  padding-bottom: 2px;
+  transition: color 0.2s;
+}
+
+.auth-link a:hover {
+  color: #fff;
+}
+
+/* ===============================
+   RESPONSIVO
+================================ */
+@media (max-width: 768px) {
+  .auth-card {
+    width: 100%;
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-page {
+    padding: 10px;
+  }
+}

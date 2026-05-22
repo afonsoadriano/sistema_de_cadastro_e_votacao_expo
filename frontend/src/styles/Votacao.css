@@ -1,0 +1,569 @@
+/* ══════════════════════════════════════════════════════════════
+   Votacao.css  —  Alinhado com o design system do Dashboard
+   Paleta: #667eea / #764ba2 · Segoe UI · #f0f2f5 background
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Página base ────────────────────────────────────────────── */
+.vot-page {
+  min-height: 100vh;
+  background: #f0f2f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1rem 2rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ── Cabeçalho da feira ─────────────────────────────────────── */
+.vot-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  gap: 3px;
+}
+
+.vot-header-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+  padding: 4px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.vot-header-sub {
+  font-size: 0.73rem;
+  color: #a0aec0;
+  margin-top: 2px;
+}
+
+/* ── Card principal ─────────────────────────────────────────── */
+.vot-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.75rem 1.75rem 1.5rem;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.vot-card--success {
+  border-top: 4px solid #38a169;
+  text-align: center;
+}
+
+.vot-card--already {
+  border-top: 4px solid #667eea;
+  text-align: center;
+}
+
+/* ── Badge do curso ─────────────────────────────────────────── */
+.vot-curso-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+
+/* ── Tema ───────────────────────────────────────────────────── */
+.vot-tema {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #1a202c;
+  line-height: 1.3;
+  margin: 0 0 1.1rem;
+}
+
+/* ── Detalhes do projecto ───────────────────────────────────── */
+.vot-detalhes {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 1.1rem;
+}
+
+.vot-detalhe {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.vot-detalhe-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #a0aec0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  min-width: 78px;
+}
+
+.vot-detalhe-val {
+  font-size: 0.86rem;
+  color: #2d3748;
+  font-weight: 500;
+}
+
+/* ── Resumo ─────────────────────────────────────────────────── */
+.vot-resumo {
+  background: #f7faff;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.vot-resumo-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #a0aec0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 5px;
+}
+
+.vot-resumo-texto {
+  font-size: 0.86rem;
+  color: #4a5568;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Separador ──────────────────────────────────────────────── */
+.vot-separador {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 1.1rem 0;
+}
+
+/* ── Área de votação ────────────────────────────────────────── */
+.vot-acao {
+  text-align: center;
+}
+
+.vot-acao-txt {
+  font-size: 0.88rem;
+  color: #718096;
+  margin: 0 0 0.8rem;
+}
+
+.vot-btn-votar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 14px rgba(102, 126, 234, 0.35);
+}
+
+.vot-btn-votar:hover:not(:disabled) {
+  opacity: 0.92;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+}
+
+.vot-btn-votar:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.25);
+}
+
+.vot-btn-votar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.vot-btn-spinner {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: vot-spin 0.7s linear infinite;
+}
+
+@keyframes vot-spin {
+  to { transform: rotate(360deg); }
+}
+
+.vot-aviso {
+  font-size: 0.71rem;
+  color: #a0aec0;
+  margin: 0.55rem 0 0;
+}
+
+/* ── Estados especiais (sucesso / já votou / erro) ──────────── */
+.vot-icon-big {
+  font-size: 3rem;
+  margin-bottom: 0.65rem;
+}
+
+.vot-confetti {
+  font-size: 3rem;
+  margin-bottom: 0.65rem;
+  animation: vot-bounce 0.55s ease;
+}
+
+@keyframes vot-bounce {
+  0%   { transform: scale(0.4); opacity: 0; }
+  70%  { transform: scale(1.2); }
+  100% { transform: scale(1);   opacity: 1; }
+}
+
+.vot-card h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1a202c;
+  margin: 0 0 0.5rem;
+}
+
+.vot-card > p {
+  font-size: 0.88rem;
+  color: #718096;
+  margin: 0 0 0.75rem;
+}
+
+.vot-proj-nome {
+  background: #f7faff;
+  border-left: 4px solid;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #2d3748;
+  text-align: left;
+  margin: 0.75rem 0;
+}
+
+.vot-total-badge {
+  display: inline-block;
+  padding: 5px 16px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin: 0.2rem 0 0.9rem;
+}
+
+.vot-obrigado {
+  font-size: 0.86rem;
+  color: #718096;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.vot-msg-erro {
+  font-size: 0.88rem;
+  color: #e53e3e;
+  margin: 0.4rem 0 1.1rem;
+}
+
+.vot-btn-retry {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+.vot-btn-retry:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* ── Loading ─────────────────────────────────────────────────── */
+.vot-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.vot-spinner {
+  width: 34px;
+  height: 34px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: vot-spin 0.8s linear infinite;
+}
+
+/* ── Footer ──────────────────────────────────────────────────── */
+.vot-footer {
+  font-size: 0.7rem;
+  color: #a0aec0;
+  margin-top: 1.25rem;
+  text-align: center;
+}
+
+/* ── Modal QR Code (no Dashboard) ───────────────────────────── */
+.qr-modal {
+  background: #fff;
+  border-radius: 14px;
+  width: 92%;
+  max-width: 400px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  animation: qr-in 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes qr-in {
+  from { opacity: 0; transform: scale(0.93) translateY(16px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0); }
+}
+
+/* Faixa superior do modal */
+.qr-header {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 20px 24px 16px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Círculos decorativos */
+.qr-header::before {
+  content: '';
+  position: absolute;
+  top: -24px; right: -24px;
+  width: 90px; height: 90px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+.qr-header::after {
+  content: '';
+  position: absolute;
+  bottom: -16px; left: -16px;
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+}
+
+.qr-evento {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.qr-titulo {
+  color: #fff;
+  font-size: 0.98rem;
+  font-weight: 800;
+  line-height: 1.3;
+  margin: 0 0 8px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.qr-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+}
+.qr-meta span {
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.72rem;
+  padding: 2px 9px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Corpo do modal */
+.qr-body {
+  padding: 18px 24px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Wrapper do QR */
+.qr-code-wrap {
+  background: #fff;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1.5px solid #e2e8f0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.1);
+  margin-bottom: 0;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.qr-code-wrap:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.18);
+}
+
+/* Cantos decorativos */
+.qr-code-wrap::before,
+.qr-code-wrap::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: #667eea;
+  border-style: solid;
+}
+.qr-code-wrap::before {
+  top: -1px; left: -1px;
+  border-width: 2.5px 0 0 2.5px;
+  border-radius: 4px 0 0 0;
+}
+.qr-code-wrap::after {
+  bottom: -1px; right: -1px;
+  border-width: 0 2.5px 2.5px 0;
+  border-radius: 0 0 4px 0;
+}
+
+.qr-instrucao {
+  margin-top: 14px;
+  font-size: 0.82rem;
+  color: #4a5568;
+  font-weight: 600;
+  text-align: center;
+}
+
+.qr-url {
+  margin-top: 5px;
+  font-size: 0.68rem;
+  color: #a0aec0;
+  word-break: break-all;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  background: #f7faff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+/* Rodapé do modal */
+.qr-acoes {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 14px 24px 18px;
+  border-top: 1px solid #f0f2f5;
+}
+
+.btn-imprimir {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+  white-space: nowrap;
+}
+.btn-imprimir:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(102, 126, 234, 0.4);
+  opacity: 0.93;
+}
+
+/* Botão fechar */
+.qr-fechar {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.2s;
+  backdrop-filter: blur(4px);
+}
+.qr-fechar:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: rotate(90deg) scale(1.1);
+}
+
+/* ── Botão QR na tabela ─────────────────────────────────────── */
+.btn-qr {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid #c7d4ff;
+  border-radius: 8px;
+  background: #f0f4ff;
+  color: #667eea;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+.btn-qr:hover {
+  background: #667eea;
+  color: #fff;
+  border-color: #667eea;
+  transform: scale(1.1);
+  box-shadow: 0 3px 10px rgba(102, 126, 234, 0.35);
+}
+.btn-qr:active { transform: scale(0.95); }
+
+/* ── Responsivo ──────────────────────────────────────────────── */
+@media (max-width: 520px) {
+  .vot-card {
+    padding: 1.4rem 1.25rem 1.25rem;
+    border-radius: 12px;
+  }
+  .vot-tema { font-size: 1.15rem; }
+  .qr-modal { max-width: 96vw; border-radius: 12px; }
+  .qr-header { padding: 16px 20px 14px; }
+  .qr-body { padding: 14px 20px 12px; }
+  .qr-acoes { flex-direction: column; padding: 12px 20px 16px; }
+  .btn-imprimir,
+  .btn-cancelar { width: 100%; justify-content: center; }
+}
