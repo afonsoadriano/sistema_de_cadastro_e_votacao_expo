@@ -1,0 +1,1 @@
+Sistema retrospectivo para fazer o cadastro de projetos e por meio de QR Code gerado pelo sistema é possível fazer a votação do projeto, e os mesmos votos são contabilizados pelo sistema e de seguida o mesmo sistema classifica os melhores projetos com base nos votos contabilizados.
